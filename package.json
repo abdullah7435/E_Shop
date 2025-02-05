@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "playwright": "^1.49.1",
+    "stripe": "^17.5.0"
+  },
+  "devDependencies": {
+    "node-mocks-http": "^1.16.2",
+    "strapi-utils": "^3.6.11"
+  }
+}

@@ -1,0 +1,142 @@
+/* Global styles */
+@tailwind base; /* Base styles from Tailwind CSS */
+@tailwind components; /* Component styles from Tailwind CSS */
+@tailwind utilities; /* Utility styles from Tailwind CSS */
+
+:root {
+  /* Global font styles */
+  font-family: "Urbanist", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 1); /* Black text color */
+
+  /* Text rendering and smoothing */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  /* Reset styles for all elements */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+}
+
+/* PRODUCT DETAILS CAROUSEL STYLING CUSTOMIZATION START */
+.productCarousel.carousel-root {
+  /* Styling for the root element of the product carousel */
+  display: flex;
+  flex-direction: row-reverse; /* Reversing the direction of carousel items */
+  gap: 15px; /* Gap between carousel items */
+}
+
+.productCarousel.carousel-root .carousel {
+  /* Styling for the carousel element */
+  width: auto; /* Allow the carousel to adjust its width based on content */
+}
+
+.productCarousel.carousel-root .carousel.carousel-slider {
+  /* Styling for the carousel in slider mode */
+  width: 100%; /* Carousel takes full width */
+}
+
+.productCarousel.carousel-root .carousel.carousel-slider .slider-wrapper {
+  /* Styling for the wrapper of carousel slides */
+  border-radius: 10px; /* Rounded corners for the carousel wrapper */
+}
+
+.productCarousel.carousel-root .carousel .thumbs-wrapper {
+  /* Styling for the wrapper of carousel thumbnails */
+  margin: 0; /* Remove default margins */
+}
+
+.productCarousel.carousel-root .carousel .thumb {
+  /* Styling for each carousel thumbnail */
+  height: 60px; /* Set the height of the thumbnail */
+  border-radius: 6px; /* Rounded corners for the thumbnail */
+  overflow: hidden; /* Hide any overflowing content */
+  position: relative; /* Enable positioning for pseudo-element */
+}
+
+.productCarousel.carousel-root .carousel .thumb img {
+  /* Styling for the image inside the carousel thumbnail */
+  width: 100%; /* Image takes full width */
+  height: 100%; /* Image takes full height */
+  object-fit: cover; /* Scale the image to cover the entire container */
+  object-position: center; /* Center the image within the container */
+}
+
+.productCarousel.carousel-root .carousel .thumb:after {
+  /* Pseudo-element for overlay on the carousel thumbnail */
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black; /* Black overlay */
+  opacity: 0; /* Initially transparent */
+}
+
+.productCarousel.carousel-root .carousel .thumb.selected,
+.productCarousel.carousel-root .carousel .thumb:hover {
+  /* Styling for selected or hovered carousel thumbnails */
+  border: 0; /* Remove border */
+}
+
+.productCarousel.carousel-root .carousel .thumb:hover:after,
+.productCarousel.carousel-root .carousel .thumb.selected:after {
+  /* Styling for the overlay on selected or hovered carousel thumbnails */
+  opacity: 0.2; /* Partially opaque overlay */
+}
+
+.productCarousel .control-arrow {
+  /* Styling for the carousel control arrows (probably from a library) */
+  display: none; /* Hide the arrows (customized elsewhere) */
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 767px) {
+  .productCarousel.carousel-root {
+    flex-direction: column; /* Change carousel items to a column layout */
+  }
+  .productCarousel.carousel-root .carousel .thumb {
+    border: 0; /* Remove border from carousel thumbnails */
+    padding: 0; /* Remove padding from carousel thumbnails */
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .productCarousel.carousel-root .carousel .thumbs {
+    /* Styling for carousel thumbnails on larger screens */
+    transform: none !important; /* Remove any transformations */
+    flex-direction: column; /* Display thumbnails in a column layout */
+    display: flex; /* Use flexbox for layout */
+    gap: 10px; /* Gap between carousel thumbnails */
+  }
+  .productCarousel.carousel-root .carousel .thumb {
+    /* Styling for carousel thumbnails on larger screens */
+    border: 0; /* Remove border */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+  }
+}
+/* PRODUCT DETAILS CAROUSEL STYLING CUSTOMIZATION END */
+
+/* Styling for unordered lists inside elements with the class "markdown" */
+.markdown ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: disc; /* Use disc-style bullets for list items */
+  margin: 20px 0; /* Set top and bottom margin for the list */
+}
+
+/* Styling for list items inside unordered lists inside elements with the class "markdown" */
+.markdown ul li {
+  margin: 10px 0; /* Set top and bottom margin for each list item */
+}
